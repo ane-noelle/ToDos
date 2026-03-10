@@ -19,6 +19,9 @@ namespace ToDoPlatform.Data;
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        
+        AppDbSeed appDbSeed = new(builder);
+
         builder.Entity<AppUser>().ToTable("users");
         builder.Entity<IdentityRole>().ToTable("roles");
         builder.Entity<IdentityUserRole<string>>().ToTable("user_roles");
