@@ -31,4 +31,5 @@ namespace ToDoPlatform.Data;
         builder.Entity<IdentityRoleClaim<string>>().ToTable("role_claims");  
 
     }
-    }
+    
+}
