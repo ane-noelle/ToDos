@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ToDoPlatform.Data;
 using ToDoPlatform.Models;
+using ToDoPlatform.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,10 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(
 )
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
+
+// Registro correto do serviço de usuário
+builder.Services.AddScoped<IUserService, UserService>();
+
 
 builder.Services.AddControllersWithViews();
 
